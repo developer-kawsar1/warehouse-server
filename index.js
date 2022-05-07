@@ -62,6 +62,23 @@ async function run(){
         const result=await serviceCollection.deleteOne(query)
         res.send(result)
 
+    }) 
+    // update user 
+    app.put('/product/:id' ,async (req,res)=>{
+        const id=req.params.id 
+
+        const updatedQuantity=req.body 
+        const filter={_id:ObjectId(id)} 
+        const option={upsert:true} 
+        const updateDoc = {
+            $set: {
+              quantity:updatedQuantity.quantity
+            }
+          }; 
+
+          const result = await serviceCollection.updateOne(filter, updateDoc, option);
+          res.send(result)
+        console.log(updatedQuantity); 
     })
   }finally{
 
