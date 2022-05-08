@@ -7,9 +7,10 @@ const cors=require("cors")
 
 const app=express() 
 const port=process.env.PORT || 5000 
-// middleware 
+//  middleware 
 app.use(cors()) 
-app.use(express.json())
+app.use(express.json()) 
+// simple request 
 app.get('/',(req,res)=>{
     res.send("running  products  server")
 })
