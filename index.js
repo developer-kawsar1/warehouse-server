@@ -11,7 +11,7 @@ const port=process.env.PORT || 5000
 app.use(cors()) 
 app.use(express.json())
 app.get('/',(req,res)=>{
-    res.send("running genious server")
+    res.send("running  products  server")
 })
 
 app.listen(port,(req,res)=>{
