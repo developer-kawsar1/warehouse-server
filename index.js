@@ -30,7 +30,7 @@ async function run(){
   try{
      await client.connect(); 
      const serviceCollection=client.db('groceryDB').collection('product')
-
+// get api 
     app.get('/product', async(req,res)=>{
         const query={}
         const cursor=serviceCollection.find(query);
@@ -44,7 +44,7 @@ async function run(){
         res.send(product)
     }) 
 
-    // post 
+    // post  api
     app.post('/product',async(req,res)=>{
         const newProduct=req.body 
         console.log(newProduct);
